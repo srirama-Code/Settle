@@ -25,7 +25,7 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                 navMenuComponent = __decorate([
                     core_1.Component({
                         selector: 'nav-menucomponent',
-                        templateUrl: './menubar.html'
+                        templateUrl: './HTML/menubar.html'
                     }), 
                     __metadata('design:paramtypes', [])
                 ], navMenuComponent);

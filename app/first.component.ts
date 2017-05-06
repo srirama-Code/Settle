@@ -1,11 +1,13 @@
 import {Component} from '@angular/core';
-
+import {navMenuComponent} from './secondcomponent';
 
 @Component({
 selector:'my-firstcomponent',
-template:`<h1>Jai Shriram <h1>`
+template:`<nav-menucomponent></nav-menucomponent>`,
+directives : [navMenuComponent]
 })
 export class FirstComponent{
-first = {content: "Hare krishna"};
+first = {content: "new test "};
 color = "green"
 }
+

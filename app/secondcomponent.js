@@ -1,4 +1,4 @@
-System.register(['@angular/core', './secondcomponent'], function(exports_1, context_1) {
+System.register(['@angular/core'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,34 +10,29 @@ System.register(['@angular/core', './secondcomponent'], function(exports_1, cont
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, secondcomponent_1;
-    var FirstComponent;
+    var core_1;
+    var navMenuComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
-            },
-            function (secondcomponent_1_1) {
-                secondcomponent_1 = secondcomponent_1_1;
             }],
         execute: function() {
-            FirstComponent = (function () {
-                function FirstComponent() {
-                    this.first = { content: "new test " };
-                    this.color = "green";
+            navMenuComponent = (function () {
+                function navMenuComponent() {
+                    this.firstname = 'sriram';
                 }
-                FirstComponent = __decorate([
+                navMenuComponent = __decorate([
                     core_1.Component({
-                        selector: 'my-firstcomponent',
-                        template: "<nav-menucomponent></nav-menucomponent>",
-                        directives: [secondcomponent_1.navMenuComponent]
+                        selector: 'nav-menucomponent',
+                        templateUrl: './HTML/menubar.html'
                     }), 
                     __metadata('design:paramtypes', [])
-                ], FirstComponent);
-                return FirstComponent;
+                ], navMenuComponent);
+                return navMenuComponent;
             }());
-            exports_1("FirstComponent", FirstComponent);
+            exports_1("navMenuComponent", navMenuComponent);
         }
     }
 });
-//# sourceMappingURL=first.component.js.map
+//# sourceMappingURL=secondcomponent.js.map

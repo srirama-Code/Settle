@@ -29,7 +29,7 @@ System.register(['@angular/core', './secondcomponent'], function(exports_1, cont
                 FirstComponent = __decorate([
                     core_1.Component({
                         selector: 'my-firstcomponent',
-                        template: "<nav-menucomponent></nav-menucomponent>",
+                        template: "<header><nav-menucomponent>\n</nav-menucomponent></header>",
                         directives: [secondcomponent_1.navMenuComponent]
                     }), 
                     __metadata('design:paramtypes', [])

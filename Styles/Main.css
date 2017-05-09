@@ -1,3 +1,6 @@
 header {
   background-color: brown;
-  color: aliceblue; }
+  color: aliceblue;
+  height: 60px; }
+  header a {
+    color: aliceblue; }

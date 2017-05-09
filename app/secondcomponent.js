@@ -20,7 +20,7 @@ System.register(['@angular/core'], function(exports_1, context_1) {
         execute: function() {
             navMenuComponent = (function () {
                 function navMenuComponent() {
-                    this.firstname = 'sriram';
+                    this.firstName = 'sriram';
                 }
                 navMenuComponent = __decorate([
                     core_1.Component({

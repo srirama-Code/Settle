@@ -3,7 +3,7 @@ import {navMenuComponent} from './secondcomponent';
 
 @Component({
 selector:'my-firstcomponent',
-template:`<header class=".cla"><nav-menucomponent>
+template:`<header><nav-menucomponent>
 </nav-menucomponent></header>`,
 directives : [navMenuComponent]
 })

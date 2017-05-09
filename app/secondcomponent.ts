@@ -5,5 +5,5 @@ selector:'nav-menucomponent',
 templateUrl:'./HTML/menubar.html'
 })
 export class navMenuComponent{
-firstname='sriram';
+firstName='sriram';
 }

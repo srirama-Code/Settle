@@ -2,6 +2,11 @@ $colorCode : brown;
 
 header{
 background-color : $colorCode;
-color: aliceblue
+color: aliceblue;
+height: 60px;
+
+a{
+color: aliceblue;
+}
 }
 

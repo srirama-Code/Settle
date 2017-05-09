@@ -7,7 +7,7 @@ gulp.src('./**/*.scss')
 .pipe(sass()
 .on('error', sass.logError)
 )
-.pipe(gulp.dest('./Styles/'))
+.pipe(gulp.dest('./'))
 }); 
 
 gulp.task('default',['sas'],function(){

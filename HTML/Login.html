@@ -8,16 +8,24 @@
     <body>
         <div class="container">
             <div class="row">
-                <div class="col-sm-offset-5 col-sm-2">
+                <div class="col-md-offset-5 col-md-2">
                    <h3> Generator </h3>
             </div>
             </div>
             <div class="row">
-            <div class="col-sm-3 col-sm-offset-4">
-            <ul class="nav nav-tabs" >
-                <li class="active" style="margin-right:20px">Sign Up</li>
-                <li>Log In  </li>
+            <div class="col-md-3 col-md-offset-4">
+            <ul class="nav nav-tabs"  >
+                <li style="margin-right:20px"><a data-target="#signUp" data-toggle="tab">Sign Up </a></li>
+                <li > <a data-target="#logIn" data-toggle="tab"> Log In  </a></li>
             </ul>
+            <div class="tab-content clearfix">
+                <div class="tab-pane" id="signUp">
+                    this is first tab
+                </div>
+                <div class="tab-pane" id="logIn">
+                this is second tab 
+                </div>
+            </div>
             </div>
             </div>
         </div>

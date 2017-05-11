@@ -1,4 +1,4 @@
-System.register(['@angular/core', './secondcomponent', './GeneratorComponent'], function(exports_1, context_1) {
+System.register(['@angular/core'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,37 +10,32 @@ System.register(['@angular/core', './secondcomponent', './GeneratorComponent'], 
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, secondcomponent_1, GeneratorComponent_1;
-    var FirstComponent;
+    var core_1;
+    var MemeGenerator;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
-            },
-            function (secondcomponent_1_1) {
-                secondcomponent_1 = secondcomponent_1_1;
-            },
-            function (GeneratorComponent_1_1) {
-                GeneratorComponent_1 = GeneratorComponent_1_1;
             }],
         execute: function() {
-            FirstComponent = (function () {
-                function FirstComponent() {
-                    this.first = { content: "new test " };
-                    this.color = "green";
+            MemeGenerator = (function () {
+                function MemeGenerator() {
+                    this.first = "abcd";
                 }
-                FirstComponent = __decorate([
+                MemeGenerator.prototype.firebuttonClicked = function ($event) {
+                    console.log(this);
+                };
+                MemeGenerator = __decorate([
                     core_1.Component({
-                        selector: 'my-firstcomponent',
-                        template: "<header><nav-menucomponent>\n</nav-menucomponent>\n</header>\n<meme-GeneratorComponent> </meme-GeneratorComponent>",
-                        directives: [secondcomponent_1.navMenuComponent, GeneratorComponent_1.MemeGenerator]
+                        selector: 'meme-GeneratorComponent',
+                        templateUrl: "./HTML/Generator.html"
                     }), 
                     __metadata('design:paramtypes', [])
-                ], FirstComponent);
-                return FirstComponent;
+                ], MemeGenerator);
+                return MemeGenerator;
             }());
-            exports_1("FirstComponent", FirstComponent);
+            exports_1("MemeGenerator", MemeGenerator);
         }
     }
 });
-//# sourceMappingURL=first.component.js.map
+//# sourceMappingURL=GeneratorComponent.js.map

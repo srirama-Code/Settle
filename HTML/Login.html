@@ -1,33 +1,67 @@
 <!DOCTYPE html>
 <html>
-    <head>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ng2-bootstrap/x.x.x/ng2-bootstrap.min.js"></script>
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-    </head>
 
-    <body>
-        <div class="container">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+    <link rel="stylesheet" href="/Styles/bootstrap/bootstrap.css">
+    <script src="/Styles/bootstrap/bootstrap.js"></script>
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="offset-md-3" style="border: 1px black solid;margin-top:10%
+                    ">
             <div class="row">
-                <div class="col-md-offset-5 col-md-2">
-                   <h3> Generator </h3>
-            </div>
-            </div>
-            <div class="row">
-            <div class="col-md-3 col-md-offset-4">
-            <ul class="nav nav-tabs"  >
-                <li style="margin-right:20px"><a data-target="#signUp" data-toggle="tab">Sign Up </a></li>
-                <li > <a data-target="#logIn" data-toggle="tab"> Log In  </a></li>
-            </ul>
-            <div class="tab-content clearfix">
-                <div class="tab-pane" id="signUp">
-                    this is first tab
-                </div>
-                <div class="tab-pane" id="logIn">
-                this is second tab 
+                <div class="offset-md-4 col-md-2">
+                    <h3 style="color:cadetblue"> Generator </h3>
                 </div>
             </div>
-            </div>
+            <div class="row">
+
+                <div class="col-md-5 col-md-offset-4">
+                    <ul class="nav nav-tabs">
+                        <li style="margin-right:20px"><a data-target="#signUp" data-toggle="tab">Sign Up </a></li>
+                        <li> <a data-target="#logIn" data-toggle="tab"> Log In  </a></li>
+                    </ul>
+
+                    <form>
+                        <div class="tab-content clearfix">
+                            <div class="tab-pane" id="signUp">
+                                <div class="formgroup">
+                                    <i class="glyphicon glyphicon-user"></i>
+                                    <input type="text" placeholder="First and Last Name"> </input>
+                                </div>
+                                <div class="formgroup">
+                                    <i class="glyphicon glyphicon-enveloper"></i>
+                                    <input type="text" placeholder="Email"> </input>
+                                </div>
+                                <div class="formgroup">
+                                    <i class="glyphicon glyphicon-lock"></i>
+                                    <input type="text" placeholder="Password"> </input>
+                                </div>
+
+                            </div>
+                            <div class="tab-pane" id="logIn">
+                                <div class="form-group">
+                                <i class="glyphicon glyphicon-user"></i>
+                                <input type="text" placeholder="Username or Email"> </input>
+                            </div>
+                            <div class="formgroup">
+                                <i class="glyphicon glyphicon-lock"></i>
+                                <input type="text" placeholder="Password"> </input>
+                            </div>
+                        </div>
+                </div>
+                </form>
+
+
             </div>
         </div>
-    </body>
+    </div>
+    </div>
+</body>
+
 </html>

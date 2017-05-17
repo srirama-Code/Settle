@@ -18,7 +18,7 @@ console.log(this);
          img.src='./Images/sriram.jpg';
 
        var canv = document.getElementById("myCanvas");
-        var ctx=  canv.getContext('2d');
+        var ctx=  canv.getContext('2d'); 
 img.onload = function(){
 
         ctx.drawImage(img,0,0);

@@ -22,16 +22,19 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                 function MemeGenerator() {
                     this.first = "abcd";
                 }
+                MemeGenerator.prototype.changeImage = function ($event) {
+                };
                 MemeGenerator.prototype.firebuttonClicked = function ($event) {
                     console.log(this);
                 };
                 MemeGenerator.prototype.ngAfterViewInit = function () {
-                    var img = new Image();
-                    img.src = './Images/sriram.jpg';
+                    this.img = new Image();
+                    // this.img = new Image();
+                    this.img.src = './Images/sriram1.jpg';
                     var canv = document.getElementById("myCanvas");
                     var ctx = canv.getContext('2d');
-                    img.onload = function () {
-                        ctx.drawImage(img, 0, 0);
+                    this.img.onload = function () {
+                        ctx.drawImage(this.img, 0, 0);
                         //refill text
                         ctx.fillStyle = "blue";
                         ctx.fillText("Jai shriram", 60, 100);

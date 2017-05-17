@@ -1,4 +1,4 @@
-<div style='margin-top:20px' class='container' >
+<div style='margin-top:120px' class='container' >
 <div class='row'>
     <div class='col-md-4' style='height:60px;margin:1px solid black'>
       <canvas id='myCanvas' width='200' height='200'>
@@ -6,10 +6,19 @@
      <!--    src='./Images/sriram.jpg'/>-->
     </div>
     <div class='col-md-8'>
-   <input type='text' id ='toptext'/> 
+        <div class='col-md-12' >
+   <input type='text' id ='toptext'/><span>  Text Above</span> 
+        </div>
+        <div class="col-md-12" style ='margin-top:20px'>
+    <input type='text'/><span>  Text Below</span>
+        </div>
+        <div class="col-md-12" style ='margin-top:10px;margin-bottom:10px'>
+      
    <button (click)="firebuttonClicked($event)"> submit </button>
-      <input type='text'/>
- <input id="customerLogo" class="form-control-file" style="width: 100%;" required type="file" name="UploadedLogo" accept="image/*" />
+        </div>
+        <div class="col-md-12">
+ <input (onchange)="changeImage($event)" id="customerLogo" class="form-control-file" style="width: 100%;" required type="file" name="UploadedLogo" accept="image/*" />
+    </div>
     </div>
 </div>
 </div>

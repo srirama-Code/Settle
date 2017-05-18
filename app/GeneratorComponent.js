@@ -32,11 +32,13 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                     console.log(this);
                 };
                 MemeGenerator.prototype.ngAfterViewInit = function () {
-                    var img = new Image();
-                    var canv = document.getElementById("myCanvas");
                     //var img= document.getElementsByTagName('img');
+                    var img = new Image();
                     img.src = './Images/sriram1.png';
+                    var canv = document.getElementById("myCanvas");
                     var ctx = canv.getContext('2d');
+                    this.imageHeight = img.naturalHeight;
+                    this.imageWidth = img.naturalWidth;
                     img.onload = function () {
                         ctx.drawImage(img, 0, 0, 300, 200);
                         //refill text

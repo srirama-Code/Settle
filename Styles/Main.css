@@ -28,4 +28,11 @@ body {
 
 .cta-btn {
   top: 60px;
-  right: 5%; }
+  right: 5%;
+  position: fixed;
+  width: 200px;
+  height: 55px;
+  background-color: currentColor;
+  border-radius: 0px 0px 30px 30px;
+  padding-left: 20px;
+  padding-top: 20px; }

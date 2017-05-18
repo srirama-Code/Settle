@@ -7,6 +7,9 @@ import { ViewChild } from '@angular/core';
 })
 export class MemeGenerator {
 
+ imageWidth :number;
+  imageHeight : number;
+ 
     first = "abcd";
 
     changeImage($event) {
@@ -22,17 +25,17 @@ export class MemeGenerator {
         console.log(this);
     }
     ngAfterViewInit() {
+        //var img= document.getElementsByTagName('img');
+ 
         var img = new Image();
-
+        img.src = './Images/sriram1.png';
         var canv = document.getElementById("myCanvas");
-//var img= document.getElementsByTagName('img');
-      img.src = './Images/sriram1.png';
-
-      
-   
         var ctx = canv.getContext('2d');
+        this.imageHeight= img.naturalHeight;
+        this.imageWidth= img.naturalWidth;
+       
         img.onload = function () {
-            ctx.drawImage(img,0,0,300,200);
+        ctx.drawImage(img,0,0,300,200);
 
             //refill text
             ctx.fillStyle = "blue";

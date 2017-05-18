@@ -33,19 +33,21 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                 };
                 MemeGenerator.prototype.ngAfterViewInit = function () {
                     var img = new Image();
-                    //   img.src = './Images/sriram1.jpg';
                     var canv = document.getElementById("myCanvas");
+                    //var img= document.getElementsByTagName('img');
+                    img.src = './Images/sriram1.png';
                     var ctx = canv.getContext('2d');
                     img.onload = function () {
-                        ctx.drawImage(img, 0, 0);
+                        ctx.drawImage(img, 0, 0, 300, 200);
                         //refill text
                         ctx.fillStyle = "blue";
+                        console.log('jai shriram');
                         ctx.fillText("Jai shriram", 60, 100);
                     };
                     //refill text
-                    ctx.fillStyle = "blue";
+                    //       ctx.fillStyle = "blue";
                     // ctx.fillText("Jai shriram",40,80);
-                    console.log("ngAfterViewInit");
+                    //     console.log("ngAfterViewInit");
                 };
                 MemeGenerator = __decorate([
                     core_1.Component({

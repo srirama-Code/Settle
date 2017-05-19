@@ -32,7 +32,7 @@ System.register(['@angular/core', './secondcomponent', './GeneratorComponent'], 
                 FirstComponent = __decorate([
                     core_1.Component({
                         selector: 'my-firstcomponent',
-                        template: "<header><nav-menucomponent>\n</nav-menucomponent>\n</header>\n<a href='./HTML/Lllogin.html' class='cta-btn'>\n<img/>\n<span style='color:GhostWhite'>Caption an Image</span>\n</a>\n<meme-GeneratorComponent> </meme-GeneratorComponent>",
+                        template: "<header><nav-menucomponent>\n</nav-menucomponent>\n</header>\n<a href='./HTML/Lllogin.html' class='cta-btn'>\n<i class='glyphicon glyphicon-pencil'> </i>\n<span style='color:GhostWhite'>Caption an Image</span>\n</a>\n<meme-GeneratorComponent> </meme-GeneratorComponent>",
                         directives: [secondcomponent_1.navMenuComponent, GeneratorComponent_1.MemeGenerator]
                     }), 
                     __metadata('design:paramtypes', [])

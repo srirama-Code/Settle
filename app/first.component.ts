@@ -8,7 +8,7 @@ template:`<header><nav-menucomponent>
 </nav-menucomponent>
 </header>
 <a href='./HTML/Lllogin.html' class='cta-btn'>
-<i class='glyphicon glyphicon-pencil'> </i>
+<i class='glyphicon glyphicon-pencil pencilSettings' style='color:GhostWhite;font-size;20px'> </i>
 <span style='color:GhostWhite'>Caption an Image</span>
 </a>
 <meme-GeneratorComponent> </meme-GeneratorComponent>`,

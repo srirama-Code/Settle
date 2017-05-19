@@ -6,20 +6,25 @@ import { ViewChild } from '@angular/core';
     templateUrl: `./HTML/Generator.html`
 })
 export class MemeGenerator {
-
- imageWidth :number;
-  imageHeight : number;
- 
     first = "abcd";
-
     changeImage($event) {
     }
-
     drawtext($event) {
 
         console.log(this);
         console.log($event);
     }
+
+drawBelowText($event){
+        console.log(this);
+        console.log($event);
+}
+
+drawAboveText($event){
+        console.log(this);
+        console.log($event.target.value);
+}
+
 
     firebuttonClicked($event) {
         console.log(this);
@@ -31,17 +36,42 @@ export class MemeGenerator {
         img.src = './Images/sriram1.png';
         var canv = document.getElementById("myCanvas");
         var ctx = canv.getContext('2d');
-        this.imageHeight= img.naturalHeight;
-        this.imageWidth= img.naturalWidth;
        
         img.onload = function () {
-        ctx.drawImage(img,0,0,300,200);
+        var scaleX=1;
+        var scaleY=1;
+   // var screenWidth= parseInt(canv.style.width);
+    //var screenHeight = parseInt(canv.style.height);
+    //var imageHeight= img.naturalHeight;
+    //var imageWidth= img.naturalWidth;
+     
+//if (imageHeight > screenHeight){
+//scaleX = screenHeight/imageHeight; 
+//}
 
-            //refill text
+//if (imageWidth > screenWidth){
+//scaleY= screenWidth/imageWidth;
+//}
+
+//var scale = scaleY;
+
+//if (scaleX<scaleY){
+  //  scale=scaleX;
+//}
+//if (scale < 1)
+//{
+//imageHeight = imageHeight * scale;
+//imageWidth = imageWidth * scale;
+//}
+//var hght = imageHeight.toString() + 'px';
+//var wdt = imageWidth.toString() + 'px';
+//canv.style.height = hght;
+//canv.style.width = wdt;
+
+  ctx.drawImage(img,0,0,300,300);
             ctx.fillStyle = "blue";
             console.log('jai shriram');
-            ctx.fillText("Jai shriram", 60, 100);
-
+          //  ctx.fillText("Jai shriram", 60, 100);
         }
         //refill text
         //       ctx.fillStyle = "blue";

@@ -1,21 +1,21 @@
 <div style='margin-top:120px' class='container' >
 <div class='row'>
     <div class='col-md-5 offset-md-1' style='margin:1px solid black'>
-    
-         <canvas id='myCanvas' style="height:300px;width:300px;margin:1px solid black" > 
+    <!--<img id = 'am' src= './Images/sriram1.png'/> -->
+         <canvas id='myCanvas' style="margin:1px solid black" > 
        </canvas> 
 
     </div>
     <div class='col-md-5' id='TextDiv' style='margin-top:20px'>
         <div class='col-md-12' >
-   <input type='text' id ='toptext' (keypress) = "drawAboveText($event)" placeholder='Top-Text'/>
+   <input type='text' id ='toptext'   placeholder='Top-Text'/>
         </div>
         <div class="col-md-12" style ='margin-top:20px'>
-    <input type='text' (keypress) = "drawBelowText($event)" placeholder='Bottom-Text'/>
+    <input type='text'   placeholder='Bottom-Text'/>
         </div>
     <div class="col-md-12" style ='margin-top:40px;margin-bottom:10px'>
       
-   <button (click)="drawtext($event)"> Generate ! </button>
+   <button > Generate ! </button>
         </div>
         <!--<div class="col-md-12">
  <input (onchange)="changeImage($event)" id="customerLogo" class="form-control-file" style="width: 100%;" required type="file" name="UploadedLogo" accept="image/*" />

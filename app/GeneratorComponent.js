@@ -36,11 +36,7 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                         var ac = Number(canv.clientHeight);
                         var db = Number(canv.clientWidth);
                         var ir = document.getElementById("am");
-<<<<<<< HEAD
                         ctx.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight, 0, 0, 400, 400);
-=======
-                        ctx.drawImage(img, 0, 0, 463, 352, 0, 0, 400, 400);
->>>>>>> 19d512913fd0fe29b52bdf391bd284fb14c3d2df
                         ctx.fillStyle = "blue";
                         console.log('jai shriram');
                     };

@@ -33,7 +33,7 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                         var ac = Number(canv.clientHeight);
                         var db = Number(canv.clientWidth);
                         var ir = document.getElementById("am");
-                        ctx.drawImage(img, 0, 0, 463, 352, 0, 0, 400, 304);
+                        ctx.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight, 0, 0, 400, 400);
                         ctx.fillStyle = "blue";
                         console.log('jai shriram');
                     };

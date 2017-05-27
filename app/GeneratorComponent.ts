@@ -7,36 +7,61 @@ import { ViewChild } from '@angular/core';
 })
 export class MemeGenerator {
     first = "abcd";
-    changeImage($event) {
+    
+    
+    drawBottomText($event)
+    {
+              console.log($event.target.value);
     }
 
     drawTopText($event){
+         var canv = document.getElementById("myCanvas");
+        var  ctx = canv.getContext("2d");
+        ctx.clearRect(0,0,400,400)
+        this.DrawCanvasImagewithText($event);
 
-console.log($event.target.value);
+        var abc = document.getElementById("myCanvas");
+        var  bbc = abc.getContext("2d");
+        ctx.textAlign = 'center';
+       //  ctx.clearRect(0,0,400,400);
+        bbc.fillStyle = "ghostwhite";
+        var textValue = $event.target.value;
+
+        var textLength = textValue.length;
+ 
+       bbc.fillText(textValue, 200, 200);
+       console.log($event.target.value);
 
     }
  
     ngAfterViewInit() {
-        var img = new Image();
-        img.src = './Images/sriram1.png';
+     this.DrawCanvasImage();
+
+        }
+
+        DrawCanvasImage()
+        {
+                       var img = new Image();
+        img.src = './Images/success-kid.jpg';
         img.onload = function () {
         var canv = document.getElementById("myCanvas");
         var ctx = canv.getContext("2d");
-
-var ac =Number(canv.clientHeight);
-var db = Number(canv.clientWidth);
-var ir = document.getElementById("am");
   ctx.drawImage(img,0,0,img.naturalWidth,img.naturalHeight,0,0,400,400);
-            ctx.fillStyle = "blue";
-            console.log('jai shriram');  
- 
-        var ac =Number(canv.clientHeight);
-        var db = Number(canv.clientWidth);
-        var ir = document.getElementById("am");
-        ctx.drawImage(img,0,0,463,352,0,0,400,400);
-        ctx.fillStyle = "blue";
-        console.log('jai shriram');  
 
         }
+    }
+    DrawCanvasImagewithText(event)
+    {
+ var img = new Image();
+        img.src = './Images/success-kid.jpg';
+        img.onload = function () {
+        var canv = document.getElementById("myCanvas");
+        var ctx = canv.getContext("2d");
+  ctx.drawImage(img,0,0,img.naturalWidth,img.naturalHeight,0,0,400,400);
+   ctx.fillText(event.target.value,200,100);
+
+        }
+
+    }
     }
 

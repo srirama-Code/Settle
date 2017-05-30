@@ -8,21 +8,22 @@ import { ViewChild } from '@angular/core';
 export class MemeGenerator {
     first = "abcd";
 
-    topText : string;
+    topText : string ;
     bottomText : string;
     topFont: any;
     bottomFont: any;
-    constructor()
+    
+        constructor()
     {
-        this.topFont = 60;
-        this.bottomFont= 60;
+        this.topFont = 80;
+        this.bottomFont= 80;
     }
 
 
     drawBottomText($event) {
 
         this.bottomText = $event.target.value;
- this.bottomFont = 60 - 2 * this.bottomText.length;
+ this.bottomFont = 80 - 2 * this.bottomText.length;
       this.clearImage();
         this.DrawCanvasImagewithText($event);
         console.log($event.target.value);
@@ -30,10 +31,13 @@ export class MemeGenerator {
 
     drawTopText($event) {
     this.topText = $event.target.value;
-if(this.topFont>20)
-{
-this.topFont = 60 - 2 * this.topText.length;
-}
+
+this.topFont = 80 - 2 * this.topText.length;
+  if(this.topFont<30)
+  {
+this.topFont =50;
+
+  }
     
         
         this.clearImage();
@@ -68,14 +72,37 @@ var canv = document.getElementById("myCanvas");
         var bottomFontLocal = this.bottomFont;
         var topTextLocal = this.topText;
         var bottomTextLocal = this.bottomText;
+        var topTextArray = topTextLocal.toString();
+        var bottomTextArray = bottomTextLocal.toString();
+      var topwords =   topTextArray.length;
+      var bottomwords = bottomTextArray.length;
+
         var img = new Image();
+    
         img.src = './Images/success-kid.jpg';
         img.onload = function () {
             var canv = document.getElementById("myCanvas");
             var ctx = canv.getContext("2d");
             ctx.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight, 0, 0, 400, 400);
-                        ctx.font="bolder "+ topFontLocal  + "px Arial";
-            ctx.fillText(event.target.value, 0, 100);
+            ctx.font="bolder "+ topFontLocal  + "px Arial";
+              var m=ctx.measureText(event.target.value);
+              console.log(m.width);
+              var heightToStart = 60;
+              var numOfLines = m.width/400;
+              var widthPerWord = m.width/topwords;
+           var lettersInLine = 400/widthPerWord;         
+              
+              if(numOfLines == 0)
+              {
+              ctx.fillText(event.target.value, 0, 60);
+              }
+              else
+              {
+             
+       
+
+              }
+  
         }
                         
     }

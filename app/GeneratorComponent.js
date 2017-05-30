@@ -21,20 +21,21 @@ System.register(['@angular/core'], function(exports_1, context_1) {
             MemeGenerator = (function () {
                 function MemeGenerator() {
                     this.first = "abcd";
-                    this.topFont = 60;
-                    this.bottomFont = 60;
+                    this.topFont = 80;
+                    this.bottomFont = 80;
                 }
                 MemeGenerator.prototype.drawBottomText = function ($event) {
                     this.bottomText = $event.target.value;
-                    this.bottomFont = 60 - 2 * this.bottomText.length;
+                    this.bottomFont = 80 - 2 * this.bottomText.length;
                     this.clearImage();
                     this.DrawCanvasImagewithText($event);
                     console.log($event.target.value);
                 };
                 MemeGenerator.prototype.drawTopText = function ($event) {
                     this.topText = $event.target.value;
-                    if (this.topFont > 20) {
-                        this.topFont = 60 - 2 * this.topText.length;
+                    this.topFont = 80 - 2 * this.topText.length;
+                    if (this.topFont < 30) {
+                        this.topFont = 50;
                     }
                     this.clearImage();
                     this.DrawCanvasImagewithText($event);
@@ -69,7 +70,10 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                         var ctx = canv.getContext("2d");
                         ctx.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight, 0, 0, 400, 400);
                         ctx.font = "bolder " + topFontLocal + "px Arial";
-                        ctx.fillText(event.target.value, 0, 100);
+                        var m = ctx.measureText(event.target.value);
+                        console.log(m.width);
+                        var heightToStart = 60;
+                        ctx.fillText(event.target.value, 0, 60);
                     };
                 };
                 MemeGenerator = __decorate([

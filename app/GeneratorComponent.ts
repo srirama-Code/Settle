@@ -7,61 +7,77 @@ import { ViewChild } from '@angular/core';
 })
 export class MemeGenerator {
     first = "abcd";
-    
-    
-    drawBottomText($event)
+
+    topText : string;
+    bottomText : string;
+    topFont: any;
+    bottomFont: any;
+    constructor()
     {
-              console.log($event.target.value);
+        this.topFont = 60;
+        this.bottomFont= 60;
     }
 
-    drawTopText($event){
-         var canv = document.getElementById("myCanvas");
-        var  ctx = canv.getContext("2d");
-        ctx.clearRect(0,0,400,400)
+
+    drawBottomText($event) {
+
+        this.bottomText = $event.target.value;
+ this.bottomFont = 60 - 2 * this.bottomText.length;
+      this.clearImage();
         this.DrawCanvasImagewithText($event);
-
-        var abc = document.getElementById("myCanvas");
-        var  bbc = abc.getContext("2d");
-        ctx.textAlign = 'center';
-       //  ctx.clearRect(0,0,400,400);
-        bbc.fillStyle = "ghostwhite";
-        var textValue = $event.target.value;
-
-        var textLength = textValue.length;
- 
-       bbc.fillText(textValue, 200, 200);
-       console.log($event.target.value);
-
+        console.log($event.target.value);
     }
- 
-    ngAfterViewInit() {
-     this.DrawCanvasImage();
 
-        }
-
-        DrawCanvasImage()
-        {
-                       var img = new Image();
-        img.src = './Images/success-kid.jpg';
-        img.onload = function () {
-        var canv = document.getElementById("myCanvas");
-        var ctx = canv.getContext("2d");
-  ctx.drawImage(img,0,0,img.naturalWidth,img.naturalHeight,0,0,400,400);
-
-        }
+    drawTopText($event) {
+    this.topText = $event.target.value;
+if(this.topFont>20)
+{
+this.topFont = 60 - 2 * this.topText.length;
+}
+    
+        
+        this.clearImage();
+        this.DrawCanvasImagewithText($event);
+        console.log($event.target.value);
     }
-    DrawCanvasImagewithText(event)
+
+    clearImage()
     {
- var img = new Image();
+var canv = document.getElementById("myCanvas");
+        var ctx = canv.getContext("2d");
+        ctx.clearRect(0, 0, 400, 400);
+    }
+
+    ngAfterViewInit() {
+        this.DrawCanvasImage();
+
+    }
+
+    DrawCanvasImage() {
+        var img = new Image();
         img.src = './Images/success-kid.jpg';
         img.onload = function () {
-        var canv = document.getElementById("myCanvas");
-        var ctx = canv.getContext("2d");
-  ctx.drawImage(img,0,0,img.naturalWidth,img.naturalHeight,0,0,400,400);
-   ctx.fillText(event.target.value,200,100);
+            var canv = document.getElementById("myCanvas");
+            var ctx = canv.getContext("2d");
+            ctx.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight, 0, 0, 400, 400);
 
         }
-
     }
+    DrawCanvasImagewithText(event) {
+        var topFontLocal = this.topFont;
+        var bottomFontLocal = this.bottomFont;
+        var topTextLocal = this.topText;
+        var bottomTextLocal = this.bottomText;
+        var img = new Image();
+        img.src = './Images/success-kid.jpg';
+        img.onload = function () {
+            var canv = document.getElementById("myCanvas");
+            var ctx = canv.getContext("2d");
+            ctx.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight, 0, 0, 400, 400);
+                        ctx.font="bolder "+ topFontLocal  + "px Arial";
+            ctx.fillText(event.target.value, 0, 100);
+        }
+                        
     }
+}
 

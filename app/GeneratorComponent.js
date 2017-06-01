@@ -63,6 +63,10 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                     var bottomFontLocal = this.bottomFont;
                     var topTextLocal = this.topText;
                     var bottomTextLocal = this.bottomText;
+                    var topTextArray = topTextLocal.toString();
+                    var bottomTextArray = bottomTextLocal.toString();
+                    var topwords = topTextArray.length;
+                    var bottomwords = bottomTextArray.length;
                     var img = new Image();
                     img.src = './Images/success-kid.jpg';
                     img.onload = function () {
@@ -73,7 +77,14 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                         var m = ctx.measureText(event.target.value);
                         console.log(m.width);
                         var heightToStart = 60;
-                        ctx.fillText(event.target.value, 0, 60);
+                        var numOfLines = m.width / 400;
+                        var widthPerWord = m.width / topwords;
+                        var lettersInLine = 400 / widthPerWord;
+                        if (numOfLines == 0) {
+                            ctx.fillText(event.target.value, 0, 60);
+                        }
+                        else {
+                        }
                     };
                 };
                 MemeGenerator = __decorate([

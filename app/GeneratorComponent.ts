@@ -98,9 +98,6 @@ var canv = document.getElementById("myCanvas");
               }
               else
               {
-             
-       
-
               }
   
         }

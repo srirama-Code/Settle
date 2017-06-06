@@ -27,7 +27,6 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                 MemeGenerator.prototype.drawBottomText = function ($event) {
                     this.bottomText = $event.target.value;
                     this.bottomFont = 80 - 2 * this.bottomText.length;
-                    this.clearImage();
                     this.DrawCanvasImagewithText($event);
                     console.log($event.target.value);
                 };
@@ -64,10 +63,11 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                     var topTextLocal = this.topText;
                     var bottomTextLocal = this.bottomText;
                     var topTextArray = topTextLocal.toString();
-                    var bottomTextArray = bottomTextLocal.toString();
                     var topwords = topTextArray.length;
-                    var bottomwords = bottomTextArray.length;
+                    //      var bottomTextArray = bottomTextLocal.toString();
+                    //      var bottomwords = bottomTextArray.length;
                     var img = new Image();
+                    this.clearImage();
                     img.src = './Images/success-kid.jpg';
                     img.onload = function () {
                         var canv = document.getElementById("myCanvas");
@@ -84,6 +84,16 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                             ctx.fillText(event.target.value, 0, 60);
                         }
                         else {
+                            var idx = 0;
+                            var endlength = 0;
+                            var res;
+                            for (idx = 0; idx < topTextArray.length;) {
+                                endlength += lettersInLine;
+                                res = topTextArray.substring(idx, lettersInLine);
+                                ctx.fillText(res, 0, heightToStart);
+                                idx = endlength;
+                                heightToStart += 30;
+                            }
                         }
                     };
                 };

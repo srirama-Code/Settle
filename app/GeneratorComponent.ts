@@ -19,12 +19,9 @@ export class MemeGenerator {
         this.bottomFont= 80;
     }
 
-
     drawBottomText($event) {
-
         this.bottomText = $event.target.value;
  this.bottomFont = 80 - 2 * this.bottomText.length;
-      this.clearImage();
         this.DrawCanvasImagewithText($event);
         console.log($event.target.value);
     }
@@ -37,9 +34,7 @@ this.topFont = 80 - 2 * this.topText.length;
   {
 this.topFont =50;
 
-  }
-    
-        
+  }      
         this.clearImage();
         this.DrawCanvasImagewithText($event);
         console.log($event.target.value);
@@ -73,12 +68,14 @@ var canv = document.getElementById("myCanvas");
         var topTextLocal = this.topText;
         var bottomTextLocal = this.bottomText;
         var topTextArray = topTextLocal.toString();
-        var bottomTextArray = bottomTextLocal.toString();
-      var topwords =   topTextArray.length;
-      var bottomwords = bottomTextArray.length;
-
+  
+        var topwords =   topTextArray.length;
+  
+  
+  //      var bottomTextArray = bottomTextLocal.toString();
+//      var bottomwords = bottomTextArray.length;
         var img = new Image();
-    
+        this.clearImage();
         img.src = './Images/success-kid.jpg';
         img.onload = function () {
             var canv = document.getElementById("myCanvas");
@@ -98,6 +95,19 @@ var canv = document.getElementById("myCanvas");
               }
               else
               {
+                  var idx = 0;
+                  var endlength=0;
+                  var res;
+
+                  for (idx=0;idx< topTextArray.length;)
+                 {
+                  endlength += lettersInLine;
+        res = topTextArray.substring(idx,lettersInLine);
+        ctx.fillText(res,0,heightToStart);
+        idx=endlength;
+        heightToStart += 30;
+
+                 }
               }
   
         }

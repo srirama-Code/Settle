@@ -57,15 +57,57 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                         ctx.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight, 0, 0, 400, 400);
                     };
                 };
+                MemeGenerator.prototype.AddTextToImage = function (areaToFill, textToEnter, fontToUse) {
+                    var heightToStart;
+                    if (areaToFill == 'top') {
+                        heightToStart = 60;
+                    }
+                    else {
+                        heightToStart = 230;
+                    }
+                    ctx.font = "bolder " + fontToUse + "px Arial";
+                    var m = ctx.measureText(textToEnter);
+                    console.log(m.width);
+                    var numOfLines = m.width / 400;
+                    var widthPerWord = m.width / topwords;
+                    var lettersInLine = 400 / widthPerWord;
+                    if (numOfLines == 0) {
+                        ctx.fillText(event.target.value, 0, 60);
+                    }
+                    else {
+                        var idx = 0;
+                        var endlength = 0;
+                        var res;
+                        for (idx = 0; idx < topTextArray.length;) {
+                            endlength += lettersInLine;
+                            res = topTextArray.substring(idx, lettersInLine);
+                            ctx.fillText(res, 0, heightToStart);
+                            idx = endlength;
+                            heightToStart += 30;
+                        }
+                    }
+                };
                 MemeGenerator.prototype.DrawCanvasImagewithText = function (event) {
+                    var fillTop;
+                    var fillBotom;
+                    var topTextArray;
+                    var topwords;
+                    var bottomTextArray;
+                    var bottomwords;
                     var topFontLocal = this.topFont;
                     var bottomFontLocal = this.bottomFont;
                     var topTextLocal = this.topText;
                     var bottomTextLocal = this.bottomText;
-                    var topTextArray = topTextLocal.toString();
-                    var topwords = topTextArray.length;
-                    //      var bottomTextArray = bottomTextLocal.toString();
-                    //      var bottomwords = bottomTextArray.length;
+                    if (topTextLocal) {
+                        topTextArray = topTextLocal.toString();
+                        topwords = topTextArray.length;
+                        fillTop = true;
+                    }
+                    if (bottomTextLocal) {
+                        bottomTextArray = bottomTextLocal.toString();
+                        bottomwords = bottomTextArray.length;
+                        fillBotom = true;
+                    }
                     var img = new Image();
                     this.clearImage();
                     img.src = './Images/success-kid.jpg';
@@ -73,27 +115,8 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                         var canv = document.getElementById("myCanvas");
                         var ctx = canv.getContext("2d");
                         ctx.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight, 0, 0, 400, 400);
-                        ctx.font = "bolder " + topFontLocal + "px Arial";
-                        var m = ctx.measureText(event.target.value);
-                        console.log(m.width);
-                        var heightToStart = 60;
-                        var numOfLines = m.width / 400;
-                        var widthPerWord = m.width / topwords;
-                        var lettersInLine = 400 / widthPerWord;
-                        if (numOfLines == 0) {
-                            ctx.fillText(event.target.value, 0, 60);
-                        }
-                        else {
-                            var idx = 0;
-                            var endlength = 0;
-                            var res;
-                            for (idx = 0; idx < topTextArray.length;) {
-                                endlength += lettersInLine;
-                                res = topTextArray.substring(idx, lettersInLine);
-                                ctx.fillText(res, 0, heightToStart);
-                                idx = endlength;
-                                heightToStart += 30;
-                            }
+                        if (fillTop) {
+                            this.AddTextToImage('top', topTextArray, topFontLocal);
                         }
                     };
                 };

@@ -1,4 +1,4 @@
-System.register(['@angular/core', './secondcomponent', './GeneratorComponent'], function(exports_1, context_1) {
+System.register(['@angular/core', './secondcomponent', './GeneratorComponent', './GenerateComponent'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['@angular/core', './secondcomponent', './GeneratorComponent'], 
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, secondcomponent_1, GeneratorComponent_1;
+    var core_1, secondcomponent_1, GeneratorComponent_1, GenerateComponent_1;
     var FirstComponent;
     return {
         setters:[
@@ -22,6 +22,9 @@ System.register(['@angular/core', './secondcomponent', './GeneratorComponent'], 
             },
             function (GeneratorComponent_1_1) {
                 GeneratorComponent_1 = GeneratorComponent_1_1;
+            },
+            function (GenerateComponent_1_1) {
+                GenerateComponent_1 = GenerateComponent_1_1;
             }],
         execute: function() {
             FirstComponent = (function () {
@@ -33,7 +36,7 @@ System.register(['@angular/core', './secondcomponent', './GeneratorComponent'], 
                     core_1.Component({
                         selector: 'my-firstcomponent',
                         template: "<header><nav-menucomponent>\n</nav-menucomponent>\n</header>\n<a href='./HTML/Login.html' class='cta-btn'>\n<i class='glyphicon glyphicon-pencil pencilSettings' style='color:GhostWhite;font-size;20px'> </i>\n<span style='color:GhostWhite'>Caption an Image</span>\n</a>\n<meme-GeneratorComponent> </meme-GeneratorComponent>",
-                        directives: [secondcomponent_1.navMenuComponent, GeneratorComponent_1.MemeGenerator]
+                        directives: [secondcomponent_1.navMenuComponent, GeneratorComponent_1.MemeGenerator, GenerateComponent_1.Generate]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], FirstComponent);

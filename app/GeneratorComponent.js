@@ -28,17 +28,17 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                     this.bottomText = $event.target.value;
                     this.bottomFont = 80 - 2 * this.bottomText.length;
                     this.DrawCanvasImagewithText($event);
-                    console.log($event.target.value);
+                    // console.log($event.target.value);
                 };
                 MemeGenerator.prototype.drawTopText = function ($event) {
                     this.topText = $event.target.value;
                     this.topFont = 80 - 2 * this.topText.length;
-                    if (this.topFont < 30) {
+                    if (this.topFont <= 50) {
                         this.topFont = 50;
                     }
                     this.clearImage();
                     this.DrawCanvasImagewithText($event);
-                    console.log($event.target.value);
+                    //console.log($event.target.value);
                 };
                 MemeGenerator.prototype.clearImage = function () {
                     var canv = document.getElementById("myCanvas");
@@ -75,11 +75,11 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                         ctx.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight, 0, 0, 400, 400);
                         ctx.font = "bolder " + topFontLocal + "px Arial";
                         var m = ctx.measureText(event.target.value);
-                        console.log(m.width);
+                        console.log(m);
                         var heightToStart = 60;
                         var numOfLines = m.width / 400;
                         var widthPerWord = m.width / topwords;
-                        var lettersInLine = 400 / widthPerWord;
+                        var lettersInLine = Math.floor(400 / widthPerWord);
                         if (numOfLines == 0) {
                             ctx.fillText(event.target.value, 0, 60);
                         }
@@ -89,10 +89,11 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                             var res;
                             for (idx = 0; idx < topTextArray.length;) {
                                 endlength += lettersInLine;
-                                res = topTextArray.substring(idx, lettersInLine);
+                                res = topTextArray.substring(idx, endlength);
+                                console.log(res);
                                 ctx.fillText(res, 0, heightToStart);
                                 idx = endlength;
-                                heightToStart += 30;
+                                heightToStart += 40;
                             }
                         }
                     };

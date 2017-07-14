@@ -5,4 +5,8 @@ router.get('/', function(req, res, next){
     res.render('Index.html');
 });
 
+router.get('/ss', function(req, res, next){
+    res.render('sriram.html');
+});
+
 module.exports = router;

@@ -1,11 +1,16 @@
 import { Component } from '@angular/core';
 import { ViewChild } from '@angular/core';
+import { HttpModule} from '@angular/http'; 
+import { Injectable }     from '@angular/core';
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
 
 @Component({
     selector: 'meme-GeneratorComponent',
     templateUrl: `./HTML/Generator.html`
 })
 export class MemeGenerator {
+   
+
     first = "abcd";
 
     topText: string;
@@ -13,7 +18,8 @@ export class MemeGenerator {
     topFont: any;
     bottomFont: any;
 
-    constructor() {
+    constructor(public http:Http) {
+
         this.topFont = 80;
         this.bottomFont = 80;
     }
@@ -26,6 +32,7 @@ export class MemeGenerator {
     }
 
     drawTopText($event) {
+        console.log(this.http);
         this.topText = $event.target.value;
 
         this.topFont = 80 - 2 * this.topText.length;
@@ -50,7 +57,7 @@ export class MemeGenerator {
 
     DrawCanvasImage() {
         var img = new Image();
-        img.src = './Images/success-kid.jpg';
+        img.src = './rtImages/success-kid.jpg';
         img.onload = function () {
             var canv = document.getElementById("myCanvas");
             var ctx = canv.getContext("2d");
@@ -69,7 +76,7 @@ export class MemeGenerator {
         //      var bottomwords = bottomTextArray.length;
         var img = new Image();
         this.clearImage();
-        img.src = './Images/success-kid.jpg';
+        img.src = './rtImages/success-kid.jpg';
         img.onload = function () {
             var canv = document.getElementById("myCanvas");
             var ctx = canv.getContext("2d");

@@ -57,7 +57,7 @@ export class MemeGenerator {
 
     DrawCanvasImage() {
         var img = new Image();
-        img.src = './rtImages/success-kid.jpg';
+        img.src = './rtImages/succekkkkkss-kid.jpg';
         img.onload = function () {
             var canv = document.getElementById("myCanvas");
             var ctx = canv.getContext("2d");
@@ -76,7 +76,7 @@ export class MemeGenerator {
         //      var bottomwords = bottomTextArray.length;
         var img = new Image();
         this.clearImage();
-        img.src = './rtImages/success-kid.jpg';
+        img.src = './rtImages/succekkkkss-kid.jpg';
         img.onload = function () {
             var canv = document.getElementById("myCanvas");
             var ctx = canv.getContext("2d");
